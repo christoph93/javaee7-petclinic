@@ -1,15 +1,10 @@
 package org.woehlke.javaee7.petclinic.entities;
 
-import java.util.ArrayList;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-import org.hibernate.search.annotations.IndexedEmbedded;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,14 +16,6 @@ import org.hibernate.search.annotations.IndexedEmbedded;
 @Entity
 @Table(name = "visits")
 public class Visit implements Comparable<Visit> {
-
-    public Set<Despesa> getDespesas() {
-        return despesas;
-    }
-
-    public void setDespesas(Set<Despesa> despesas) {
-        this.despesas = despesas;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -46,24 +33,6 @@ public class Visit implements Comparable<Visit> {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pet_id")
     private Pet pet;
-    
-    @IndexedEmbedded
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "visit",fetch = FetchType.EAGER)
-    private Set<Despesa> despesas = new TreeSet<Despesa>();
-    
-    
-    public List<Despesa> getDesepesas(){
-        List<Despesa> desp = new ArrayList<>();
-        for(Despesa d : despesas){
-            desp.add(d);
-        }
-        return desp;
-    }
-    
-    public void addDespesa(Despesa d){
-        despesas.add(d);        
-    }
-    
 
     public Long getId() {
         return id;
