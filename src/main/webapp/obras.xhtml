@@ -7,7 +7,7 @@
                 xmlns:rich="http://richfaces.org/rich">
 
         <ui:define name="content">
-            <h2 id="obra">#{msg.obra}</h2>
+            <h2 id="obras">#{msg.obra}</h2>
             <h:form id="obraForm">
                 <rich:dataTable id="obraTable"  rows="5" value="#{obraController.obra}" var="obra" styleClass="table table-striped table-hover">
                     <rich:column id="colName" sortBy="#{obra.nome}" sortOrder="#{obraController.obraSortOrder}">
