@@ -24,8 +24,8 @@ public class Obra {
     @Column(name = "nome")
     private String nome; 
     
-    @Column(name = "reposnsavelTecnico")
-    private String reposnsavelTecnico;
+    @Column(name = "responsavelTecnico")
+    private String responsavelTecnico;
     
     @Column(name = "responsavel")
     private String responsavel;
@@ -52,11 +52,11 @@ public class Obra {
     private long tempoDecorrido;
 
     public String getReposnsavelTecnico() {
-        return reposnsavelTecnico;
+        return responsavelTecnico;
     }
 
-    public void setReposnsavelTecnico(String reposnsavelTecnico) {
-        this.reposnsavelTecnico = reposnsavelTecnico;
+    public void setResponsavelTecnico(String reposnsavelTecnico) {
+        this.responsavelTecnico = reposnsavelTecnico;
     }
 
     public String getResponsavel() {
@@ -131,7 +131,7 @@ public class Obra {
         this.id = id;
     }
 
-    public String getNomee() {
+    public String getNome() {
         return nome;
     }
 
@@ -141,7 +141,7 @@ public class Obra {
 
     @Override
     public String toString() {
-        return "Obra{" + "id=" + id + ", nome=" + nome + ", reposnsavelTecnico=" + reposnsavelTecnico + ", responsavel=" + responsavel + ", observacao=" + observacao + ", diaSemana=" + diaSemana + ", prazo=" + prazo + ", inicioObra=" + inicioObra + ", terminoObra=" + terminoObra + ", saldo=" + saldo + ", tempoDecorrido=" + tempoDecorrido + '}';
+        return "Obra{" + "id=" + id + ", nome=" + nome + ", responsavelTecnico=" + responsavelTecnico + ", responsavel=" + responsavel + ", observacao=" + observacao + ", diaSemana=" + diaSemana + ", prazo=" + prazo + ", inicioObra=" + inicioObra + ", terminoObra=" + terminoObra + ", saldo=" + saldo + ", tempoDecorrido=" + tempoDecorrido + '}';
     }
 
     
