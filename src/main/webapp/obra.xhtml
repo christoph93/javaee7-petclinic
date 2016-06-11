@@ -1,0 +1,40 @@
+    <ui:composition template="./template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich">
+
+        <ui:define name="content">
+            <h2 id="obra">#{msg.obra}</h2>
+            <h:form id="obraForm">
+                <rich:dataTable id="obraTable"  rows="5" value="#{obraController.obra}" var="obra" styleClass="table table-striped table-hover">
+                    <rich:column id="colName" sortBy="#{obra.nome}" sortOrder="#{obraController.obraSortOrder}">
+                        <f:facet name="header">
+                            <a4j:commandLink id="colNameSort" value="#{msg.nome}" render="obraTable" action="#{obraController.switchSortOrder}" />
+                        </f:facet>
+                        <h:outputText id="nome" value="#{obra.name}"/>
+                    </rich:column>
+                    <rich:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msg.edit}"/>
+                        </f:facet>
+                        <h:commandLink id="edit" action="#{obraController.getEditForm(obra.id)}"><span class="glyphicon glyphicon-edit"/></h:commandLink>
+                    </rich:column>
+                    <rich:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{msg.delete}"/>
+                        </f:facet>
+                        <h:commandLink id="delete" action="#{obraController.delete(obra.id)}"><span class="glyphicon glyphicon-trash"/></h:commandLink>
+                    </rich:column>
+                </rich:dataTable>
+                <rich:dataScroller for="obraTable"
+                                   page="#{obraController.scrollerPage}"
+                                   id="scroller"/><br/>
+                <br/>
+                <span class="glyphicon glyphicon-plus-sign" /><h:commandLink id="getNewObraForm" action="#{obraController.getNewObraForm}"><h:outputText value="#{msg.addNewObra}"/></h:commandLink>
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
