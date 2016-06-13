@@ -21,6 +21,10 @@
                 <h:inputText id="responsavelTecnico" styleClass="form-control"
                              value="#{obraController.obra.responsavelTecnico}"/>
 
+                <h:outputLabel value="#{msg.inicioObra}" for="inicioObra"/>
+                <rich:calendar id="inicioObra" locale="#{language.localeCode}"
+                               value="#{obraController.obra.inicioObra}"/> 
+
                 <h:outputLabel value="#{msg.terminoObra}" for="terminoObra"/>
                 <rich:calendar id="terminoObra" locale="#{language.localeCode}"
                                value="#{obraController.obra.terminoObra}"/>                  
@@ -35,14 +39,20 @@
 
                 <h:outputLabel value="#{msg.diaSemana}" for="diaSemana"/>
 
+                <h:outputText value="Reservado para dia da semana!"/>
+
                 <h:outputLabel value="#{msg.prazo}" for="prazo"/>
                 <rich:calendar id="prazo" locale="#{language.localeCode}"
                                value="#{obraController.obra.prazo}"/>
 
                 <h:outputLabel value="#{msg.saldo}" for="saldo"/>
 
+                <h:outputText value="Reservado para saldo!"/>
 
                 <h:outputLabel value="#{msg.tempoDecorrido}" for="tempoDecorrido"/>
+
+                <h:outputText value="Reservado para tempoDecorrido!"/>
+                
             </h:panelGrid>
             <h:commandButton id="save" value="#{msg.save}"
                              action="#{obraController.saveEditedObra}"/>

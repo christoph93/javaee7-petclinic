@@ -1,4 +1,4 @@
-    <ui:composition template="./template.xhtml"
+<ui:composition template="./template.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
@@ -6,52 +6,58 @@
                 xmlns:a4j="http://richfaces.org/a4j"
                 xmlns:rich="http://richfaces.org/rich">
 
-        <ui:define name="content">
-            <h2 id="addNewObra">#{msg.addNewObra}</h2>
-            <h:form id="addNewObraForm">
-                <h:panelGroup>
-                    <h:messages id="messages" layout="block" errorStyle="color: red"/>
-                </h:panelGroup>
-                <h:panelGrid id="grid" columns="2">
-                    <h:outputLabel value="#{msg.nome}" for="nome"/>
-                    <h:inputText id="nome" styleClass="form-control"
-                                 value="#{obraController.obra.nome}"/>
-                    
-                    <h:outputLabel value="#{msg.responsavelTecnico}" for="responsavelTecnico"/>
-                    <h:inputText id="responsavelTecnico" styleClass="form-control"
-                                 value="#{obraController.obra.responsavelTecnico}"/>
-                    
-                    <h:outputLabel value="#{msg.inicioObra}" for="inicioObraname"/>
-                    <rich:calendar id="inicioObra" locale="#{language.localeCode}"
-                                   value="#{obraController.obra.inicioObra}"/>
-                    
-                    <h:outputLabel value="#{msg.terminoObra}" for="terminoObra"/>
-                    <rich:calendar id="terminoObra" locale="#{language.localeCode}"
-                                   value="#{obraController.obra.terminoObra}"/>                  
-                   
-                    <h:outputLabel value="#{msg.responsavel}" for="responsavel"/>
-                    <h:inputText id="responsavel" styleClass="form-control"
-                                 value="#{obraController.obra.responsavel}"/>
-                    
-                    <h:outputLabel value="#{msg.observacao}" for="observacao"/>
-                    <h:inputText id="observacao" styleClass="form-control"
-                                 value="#{obraController.obra.observacao}"/>
-                    
-                    <h:outputLabel value="#{msg.diaSemana}" for="diaSemana"/>
-                    
-                    <h:outputLabel value="#{msg.prazo}" for="prazo"/>
-                    <rich:calendar id="prazo" locale="#{language.localeCode}"
-                                   value="#{obraController.obra.prazo}"/>
-                    
-                    <h:outputLabel value="#{msg.saldo}" for="saldo"/>
-                    
-                    
-                     <h:outputLabel value="#{msg.tempoDecorrido}" for="tempoDecorrido"/>
-                    
-                </h:panelGrid>
-                <h:commandButton id="save" value="#{msg.save}"
-                                 action="#{obraController.saveNewObra}"/>
-            </h:form>
-        </ui:define>
+    <ui:define name="content">
+        <h2 id="addNewObra">#{msg.addNewObra}</h2>
+        <h:form id="addNewObraForm">
+            <h:panelGroup>
+                <h:messages id="messages" layout="block" errorStyle="color: red"/>
+            </h:panelGroup>
+            <h:panelGrid id="grid" columns="2">
+                <h:outputLabel value="#{msg.nome}" for="nome"/>
+                <h:inputText id="nome" styleClass="form-control"
+                             value="#{obraController.obra.nome}"/>
 
-    </ui:composition>
+                <h:outputLabel value="#{msg.responsavelTecnico}" for="responsavelTecnico"/>
+                <h:inputText id="responsavelTecnico" styleClass="form-control"
+                             value="#{obraController.obra.responsavelTecnico}"/>
+
+                <h:outputLabel value="#{msg.inicioObra}" for="inicioObraname"/>
+                <rich:calendar id="inicioObra" locale="#{language.localeCode}"
+                               value="#{obraController.obra.inicioObra}"/>
+
+                <h:outputLabel value="#{msg.terminoObra}" for="terminoObra"/>
+                <rich:calendar id="terminoObra" locale="#{language.localeCode}"
+                               value="#{obraController.obra.terminoObra}"/>                  
+
+                <h:outputLabel value="#{msg.responsavel}" for="responsavel"/>
+                <h:inputText id="responsavel" styleClass="form-control"
+                             value="#{obraController.obra.responsavel}"/>
+
+                <h:outputLabel value="#{msg.observacao}" for="observacao"/>
+                <h:inputText id="observacao" styleClass="form-control"
+                             value="#{obraController.obra.observacao}"/>
+
+                <h:outputLabel value="#{msg.diaSemana}" for="diaSemana"/>
+
+                <h:outputText value="Reservado para dia da semana!"/>
+
+                <h:outputLabel value="#{msg.prazo}" for="prazo"/>
+                <rich:calendar id="prazo" locale="#{language.localeCode}"
+                               value="#{obraController.obra.prazo}"/>
+
+                <h:outputLabel value="#{msg.saldo}" for="saldo"/>
+
+                <h:outputText value="Reservado para saldo!"/>
+
+
+                <h:outputLabel value="#{msg.tempoDecorrido}" for="tempoDecorrido"/>
+
+                <h:outputText value="Reservado para tempoDecorrido!"/>
+
+            </h:panelGrid>
+            <h:commandButton id="save" value="#{msg.save}"
+                             action="#{obraController.saveNewObra}"/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
