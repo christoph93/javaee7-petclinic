@@ -37,17 +37,14 @@ public class Obra implements Serializable {
     @Column(name = "diaSemana")
     private String diaSemana;
     
-    @Column(name = "prazo")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date prazo;
+    @Column(name = "prazo")    
+    private String prazo;
     
     @Column(name = "inicioObra")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date inicioObra;
+    private String inicioObra;
     
     @Column(name = "terminoObra")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date terminoObra;
+    private String terminoObra;
     
     @Column(name = "saldo")
     private double saldo;
@@ -87,27 +84,27 @@ public class Obra implements Serializable {
         this.diaSemana = diaSemana;
     }
 
-    public Date getPrazo() {
+    public String getPrazo() {
         return prazo;
     }
 
-    public void setPrazo(Date prazo) {
+    public void setPrazo(String prazo) {
         this.prazo = prazo;
     }
 
-    public Date getInicioObra() {
+    public String getInicioObra() {
         return inicioObra;
     }
 
-    public void setInicioObra(Date inicioObra) {
+    public void setInicioObra(String inicioObra) {
         this.inicioObra = inicioObra;
     }
 
-    public Date getTerminoObra() {
+    public String getTerminoObra() {
         return terminoObra;
     }
 
-    public void setTerminoObra(Date terminoObra) {
+    public void setTerminoObra(String terminoObra) {
         this.terminoObra = terminoObra;
     }
 
