@@ -1,6 +1,7 @@
 package org.woehlke.javaee7.petclinic.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.Date;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -33,6 +34,10 @@ public class Obra implements Serializable {
     
     @Column(name = "observacao")
     private String observacao;
+    
+    @Column(name = "data")    
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date data;
     
     @Column(name = "diaSemana")
     private String diaSemana;
@@ -79,8 +84,17 @@ public class Obra implements Serializable {
         this.observacao = observacao;
     }
 
+    public Date getData() {
+        return data;
+    }
+
+    public void setData() {
+        this.data = Date.from(Instant.now());
+    }
+
+    
     public String getDiaSemana() {
-        return diaSemana;
+        return data.toString();
     }
 
     public void setDiaSemana(String diaSemana) {

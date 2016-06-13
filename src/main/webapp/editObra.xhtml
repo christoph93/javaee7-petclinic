@@ -36,10 +36,13 @@
                 <h:outputLabel value="#{msg.observacao}" for="observacao"/>
                 <h:inputText id="observacao" styleClass="form-control"
                              value="#{obraController.obra.observacao}"/>
+                
+                <h:outputLabel value="#{msg.data}" for="data"/>
+                <h:outputText value="#{obraController.obra.data.toString()}"/>
 
                 <h:outputLabel value="#{msg.diaSemana}" for="diaSemana"/>
 
-                <h:outputText value="Reservado para dia da semana!"/>
+                <h:outputText value="#{obraController.obra.diaSemana}"/>
 
                 <h:outputLabel value="#{msg.prazo}" for="prazo"/>
                 <rich:calendar id="prazo" locale="#{language.localeCode}"
