@@ -1,5 +1,6 @@
 package org.woehlke.javaee7.petclinic.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -14,7 +15,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "obras")
-public class Obra {
+public class Obra implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,12 +38,15 @@ public class Obra {
     private String diaSemana;
     
     @Column(name = "prazo")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date prazo;
     
     @Column(name = "inicioObra")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date inicioObra;
     
     @Column(name = "terminoObra")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date terminoObra;
     
     @Column(name = "saldo")
@@ -51,7 +55,7 @@ public class Obra {
     @Column(name = "tempoDecorrido")
     private long tempoDecorrido;
 
-    public String getReposnsavelTecnico() {
+    public String getResponsavelTecnico() {
         return responsavelTecnico;
     }
 

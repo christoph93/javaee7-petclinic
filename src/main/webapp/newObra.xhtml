@@ -13,14 +13,22 @@
                     <h:messages id="messages" layout="block" errorStyle="color: red"/>
                 </h:panelGroup>
                 <h:panelGrid id="grid" columns="2">
-                    <h:outputLabel value="#{msg.nome}" for="name"/>
-                    <h:inputText id="name" styleClass="form-control"
+                    <h:outputLabel value="#{msg.nome}" for="nome"/>
+                    <h:inputText id="nome" styleClass="form-control"
                                  value="#{obraController.obra.nome}"/>
                     
-                    <h:outputLabel value="#{msg.responsavelTecnico}" for="name"/>
-                    <h:inputText id="prazo" styleClass="form-control"
+                    <h:outputLabel value="#{msg.responsavelTecnico}" for="responsavelTecnico"/>
+                    <h:inputText id="responsavelTecnico" styleClass="form-control"
                                  value="#{obraController.obra.responsavelTecnico}"/>
                     
+                    <h:outputLabel value="#{msg.inicioObra}" forinicioObraname"/>
+                    <h:inputText id="inicioObra" styleClass="form-control"
+                                 value="#{obraController.obra.inicioObra}"/>
+                    
+                    <h:outputLabel value="#{msg.terminoObra}" for="terminoObra"/>
+                    <h:inputText id="terminoObra" styleClass="form-control"
+                                 value="#{obraController.obra.terminoObra}"/>                   
+                   
                     
                 </h:panelGrid>
                 <h:commandButton id="save" value="#{msg.save}"
