@@ -22,13 +22,31 @@
                                  value="#{obraController.obra.responsavelTecnico}"/>
                     
                     <h:outputLabel value="#{msg.inicioObra}" for="inicioObraname"/>
-                    <h:inputText id="inicioObra" styleClass="form-control"
-                                 value="#{obraController.obra.inicioObra}"/>
+                    <rich:calendar id="inicioObra" locale="#{language.localeCode}"
+                                   value="#{obraController.obra.inicioObra}"/>
                     
                     <h:outputLabel value="#{msg.terminoObra}" for="terminoObra"/>
-                    <h:inputText id="terminoObra" styleClass="form-control"
-                                 value="#{obraController.obra.terminoObra}"/>                   
+                    <rich:calendar id="terminoObra" locale="#{language.localeCode}"
+                                   value="#{obraController.obra.terminoObra}"/>                  
                    
+                    <h:outputLabel value="#{msg.responsavel}" for="responsavel"/>
+                    <h:inputText id="responsavel" styleClass="form-control"
+                                 value="#{obraController.obra.responsavel}"/>
+                    
+                    <h:outputLabel value="#{msg.observacao}" for="observacao"/>
+                    <h:inputText id="observacao" styleClass="form-control"
+                                 value="#{obraController.obra.observacao}"/>
+                    
+                    <h:outputLabel value="#{msg.diaSemana}" for="diaSemana"/>
+                    
+                    <h:outputLabel value="#{msg.prazo}" for="prazo"/>
+                    <rich:calendar id="prazo" locale="#{language.localeCode}"
+                                   value="#{obraController.obra.prazo}"/>
+                    
+                    <h:outputLabel value="#{msg.saldo}" for="saldo"/>
+                    
+                    
+                     <h:outputLabel value="#{msg.tempoDecorrido}" for="tempoDecorrido"/>
                     
                 </h:panelGrid>
                 <h:commandButton id="save" value="#{msg.save}"
