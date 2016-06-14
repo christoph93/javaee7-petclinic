@@ -26,6 +26,7 @@ public class Obra implements Serializable {
     @Column(name = "nome")
     private String nome; 
     
+    @NotEmpty
     @Column(name = "responsavelTecnico")
     private String responsavelTecnico;
     
@@ -35,9 +36,10 @@ public class Obra implements Serializable {
     @Column(name = "observacao")
     private String observacao;
     
+    
     @Column(name = "data")    
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date data;
+    @Temporal(javax.persistence.TemporalType.DATE)    
+    private Date data1;
     
     @Column(name = "diaSemana")
     private String diaSemana;
@@ -84,17 +86,20 @@ public class Obra implements Serializable {
         this.observacao = observacao;
     }
 
-    public Date getData() {
-        return data;
+    public Date getData() {        
+        
+        System.out.println("getData() -->" + data1);
+        return data1;        
     }
 
-    public void setData() {
-        this.data = Date.from(Instant.now());
+    public void setData() {        
+          this.data1 = new Date();
+          System.out.println("setData() ->>" + data1);
     }
 
     
     public String getDiaSemana() {
-        return data.toString();
+        return diaSemana;
     }
 
     public void setDiaSemana(String diaSemana) {
@@ -159,8 +164,9 @@ public class Obra implements Serializable {
 
     @Override
     public String toString() {
-        return "Obra{" + "id=" + id + ", nome=" + nome + ", responsavelTecnico=" + responsavelTecnico + ", responsavel=" + responsavel + ", observacao=" + observacao + ", diaSemana=" + diaSemana + ", prazo=" + prazo + ", inicioObra=" + inicioObra + ", terminoObra=" + terminoObra + ", saldo=" + saldo + ", tempoDecorrido=" + tempoDecorrido + '}';
+        return "Obra{" + "id=" + id + ", nome=" + nome + ", responsavelTecnico=" + responsavelTecnico + ", responsavel=" + responsavel + ", observacao=" + observacao + ", data1=" + data1 + ", diaSemana=" + diaSemana + ", prazo=" + prazo + ", inicioObra=" + inicioObra + ", terminoObra=" + terminoObra + ", saldo=" + saldo + ", tempoDecorrido=" + tempoDecorrido + '}';
     }
 
+    
     
 }

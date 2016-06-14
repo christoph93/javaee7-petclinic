@@ -22,8 +22,7 @@
                              value="#{obraController.obra.responsavelTecnico}"/>
 
                 <h:outputLabel value="#{msg.inicioObra}" for="inicioObra"/>
-                <rich:calendar id="inicioObra" locale="#{language.localeCode}"
-                               value="#{obraController.obra.inicioObra}"/> 
+                <h:outputText value="#{obraController.obra.inicioObra.toString()}"/>
 
                 <h:outputLabel value="#{msg.terminoObra}" for="terminoObra"/>
                 <rich:calendar id="terminoObra" locale="#{language.localeCode}"
@@ -38,15 +37,14 @@
                              value="#{obraController.obra.observacao}"/>
                 
                 <h:outputLabel value="#{msg.data}" for="data"/>
-                <h:outputText value="#{obraController.obra.data.toString()}"/>
+                <h:outputText value="#{now}"/>
 
                 <h:outputLabel value="#{msg.diaSemana}" for="diaSemana"/>
 
                 <h:outputText value="#{obraController.obra.diaSemana}"/>
 
                 <h:outputLabel value="#{msg.prazo}" for="prazo"/>
-                <rich:calendar id="prazo" locale="#{language.localeCode}"
-                               value="#{obraController.obra.prazo}"/>
+                <h:outputText value="#{obraController.obra.prazo.toString()}"/>
 
                 <h:outputLabel value="#{msg.saldo}" for="saldo"/>
 
